@@ -1,0 +1,657 @@
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ ls
+fridge/  my-first-git-repo/  test1/  xyz/
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ cd my-first-git-repo/
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git branch
+  bugfix
+* main
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git checkout bugfix
+Switched to branch 'bugfix'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ ls
+abc  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ ls -a
+./  ../  .git/  abc  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ ls -a my-first-git-repo
+ls: cannot access 'my-first-git-repo': No such file or directory
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ touch triplex
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ ls
+abc  mno  triplex  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ rm triplex
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ ls
+abc  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ touch xxx
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ git status
+On branch bugfix
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        xxx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ git add xxx
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ git status
+On branch bugfix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   xxx
+
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ git commit xxx
+hint: Waiting for your editor to close the file...
+[bugfix aca4ca6] Added xxx.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 xxx
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (bugfix)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ ls
+abc  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git checkout -b enh
+Switched to a new branch 'enh'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ touch an-enhancement
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ ls
+abc  an-enhancement  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git status
+On branch enh
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        an-enhancement
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git commit -m "added an-enhancement
+>
+> "
+[enh 5a0d87b] added an-enhancement
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 an-enhancement
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ ls
+abc  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git merge bugfix
+Updating f311a02..aca4ca6
+Fast-forward
+ xxx | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 xxx
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ ls
+abc  mno  xxx  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git branch -d bugfix
+Deleted branch bugfix (was aca4ca6).
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git branch
+  enh
+* main
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git switch enh
+Switched to branch 'enh'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git merge enh
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+ an-enhancement | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 an-enhancement
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ ls
+abc  an-enhancement  mno  xxx  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git log
+commit 25518ca7d87f4a3891fea14788328af518219d84 (HEAD -> main)
+Merge: aca4ca6 5a0d87b
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:22:27 2022 -0500
+
+    Merge branch 'enh'
+
+commit 5a0d87b7d27b6b66cadab5550ba5cbf960d6437e (enh)
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:10:13 2022 -0500
+
+    added an-enhancement
+
+commit aca4ca63f736a9df75cb9f89f2e2d5bd78142bb0
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:00:29 2022 -0500
+
+    Added xxx.
+
+commit f311a0248588cb11b0eca6ae90590e65ad845259 (origin/main, origin/HEAD)
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Tue Jan 18 16:13:09 2022 -0500
+
+    updated abc
+
+commit d78a364fcaea1d49698c6052f321d3071dab2b29
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Tue Jan 18 16:02:02 2022 -0500
+
+    added mno file (touch mno, git add mno, git status mno, git commit mno
+
+commit f373e9831e94d62f1a7366cb9c2087adc3cf5010
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Tue Jan 18 15:57:22 2022 -0500
+
+    INitial commit
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git log -3
+commit 25518ca7d87f4a3891fea14788328af518219d84 (HEAD -> main)
+Merge: aca4ca6 5a0d87b
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:22:27 2022 -0500
+
+    Merge branch 'enh'
+
+commit 5a0d87b7d27b6b66cadab5550ba5cbf960d6437e (enh)
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:10:13 2022 -0500
+
+    added an-enhancement
+
+commit aca4ca63f736a9df75cb9f89f2e2d5bd78142bb0
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:00:29 2022 -0500
+
+    Added xxx.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git log --oneline
+25518ca (HEAD -> main) Merge branch 'enh'
+5a0d87b (enh) added an-enhancement
+aca4ca6 Added xxx.
+f311a02 (origin/main, origin/HEAD) updated abc
+d78a364 added mno file (touch mno, git add mno, git status mno, git commit mno
+f373e98 INitial commit
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git log
+commit 25518ca7d87f4a3891fea14788328af518219d84 (HEAD -> main)
+Merge: aca4ca6 5a0d87b
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:22:27 2022 -0500
+
+    Merge branch 'enh'
+
+commit 5a0d87b7d27b6b66cadab5550ba5cbf960d6437e (enh)
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:10:13 2022 -0500
+
+    added an-enhancement
+
+commit aca4ca63f736a9df75cb9f89f2e2d5bd78142bb0
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Wed Jan 19 10:00:29 2022 -0500
+
+    Added xxx.
+
+commit f311a0248588cb11b0eca6ae90590e65ad845259 (origin/main, origin/HEAD)
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Tue Jan 18 16:13:09 2022 -0500
+
+    updated abc
+
+commit d78a364fcaea1d49698c6052f321d3071dab2b29
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Tue Jan 18 16:02:02 2022 -0500
+
+    added mno file (touch mno, git add mno, git status mno, git commit mno
+
+commit f373e9831e94d62f1a7366cb9c2087adc3cf5010
+Author: Jeffrey Evans <jeffreyevans.qcec@aol.com>
+Date:   Tue Jan 18 15:57:22 2022 -0500
+
+    INitial commit
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git log --oneline
+25518ca (HEAD -> main) Merge branch 'enh'
+5a0d87b (enh) added an-enhancement
+aca4ca6 Added xxx.
+f311a02 (origin/main, origin/HEAD) updated abc
+d78a364 added mno file (touch mno, git add mno, git status mno, git commit mno
+f373e98 INitial commit
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git dif enh
+git: 'dif' is not a git command. See 'git --help'.
+
+The most similar commands are
+        diff
+        config
+        difftool
+        init
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git diff enh
+diff --git a/xxx b/xxx
+new file mode 100644
+index 0000000..e69de29
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ ls -a enh
+ls: cannot access 'enh': No such file or directory
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git branch
+  enh
+* main
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ ls
+abc  an-enhancement  mno  xxx  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ code abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   abc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git add adc
+fatal: pathspec 'adc' did not match any files
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git commit -m "updated abc"
+[main 8d43f3b] updated abc
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git switch enh
+Switched to branch 'enh'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ ls
+abc  an-enhancement  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ code abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git commit -m "updated abc again"
+[enh 566f9e4] updated abc again
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git status
+On branch enh
+nothing to commit, working tree clean
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ ls abc
+abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ ls
+abc  an-enhancement  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ ls -a
+./  ../  .git/  abc  an-enhancement  mno  xyz
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (enh)
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ git merge enh
+Auto-merging abc
+CONFLICT (content): Merge conflict in abc
+Automatic merge failed; fix conflicts and then commit the result.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   abc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main|MERGING)
+$ code abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main|MERGING)
+$ code abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main|MERGING)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main|MERGING)
+$ git commit -m "fixed merge conflict on abc"
+[main 0f50b7a] fixed merge conflict on abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ code abc
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ cat ab
+cat: ab: No such file or directory
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ cat abc
+I am anxious but excited for my coding journey.
+This is another line of code.
+This the second line of code.
+This is the third line of code.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/my-first-git-repo (main)
+$ cd ..
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ mkdir merge-conflict
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ ls
+fridge/  merge-conflict/  my-first-git-repo/  test1/  xyz/
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ cd merge-conflict/
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict
+$ ls
+source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict
+$ git innit
+git: 'innit' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict
+$ git init
+Initialized empty Git repository in C:/repos/merge-conflict/.git/
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git commit -m "Added source code file."
+[main (root-commit) d460880] Added source code file.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git checkout -b enh
+Switched to a new branch 'enh'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git branch main
+fatal: A branch named 'main' already exists.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git switch main
+Switched to branch 'main'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git switch enh
+Switched to branch 'enh'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ ls
+source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git status
+On branch enh
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   source-code.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git commit -m "Updated source-code.txt for enh"
+[enh 341eee0] Updated source-code.txt for enh
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git status
+On branch enh
+nothing to commit, working tree clean
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (enh)
+$ git switch main
+Switched to branch 'main'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git checkout -b bugfix
+Switched to a new branch 'bugfix'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (bugfix)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (bugfix)
+$ git status
+On branch bugfix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   source-code.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (bugfix)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (bugfix)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (bugfix)
+$ git commit -m "Update source-code.txt for bugfix"
+[bugfix 1692461] Update source-code.txt for bugfix
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (bugfix)
+$ git switch main
+Switched to branch 'main'
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git merge bugfix
+Updating d460880..1692461
+Fast-forward
+ source-code.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ git merge enh
+Auto-merging source-code.txt
+CONFLICT (content): Merge conflict in source-code.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   source-code.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   source-code.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ git add .
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main|MERGING)
+$ git commit -m "fixed merge with enh"
+[main 5ee0038] fixed merge with enh
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ code source-code.txt
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$ cd ..
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ mkdir Learning view
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos
+$ cd merge-conflict/
+
+max-student@DESKTOP-58U3A7J MINGW64 /c/repos/merge-conflict (main)
+$
